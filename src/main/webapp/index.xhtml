@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head></h:head>
+<h:body>
+    <h:form>
+        <p:panel header="Validate">
+            <!--<p:messages id="inputForm">-->
+                <h:panelGrid id="grid" columns="3" cellpadding="5">
+                    <h:outputLabel for="#{createDriverBean.driver.firstName}" value="First name:"/>
+                    <p:inputText id="firstName" value="#{createDriverBean.driver.firstName}" required="true" label="First name"/>
+                    <p:message for="firstName"/>
+
+                    <h:outputLabel for="#{createDriverBean.driver.lastName}" value="Last name:"/>
+                    <p:inputText id="lastName" value="#{createDriverBean.driver.lastName}" required="true" label="Last name"/>
+                    <p:message for="lastName"/>
+
+                    <h:outputLabel for="#{createDriverBean.driver.autoPlate}" value="Auto plate:"/>
+                    <p:inputText id="autoPlate" value="#{createDriverBean.driver.autoPlate}" required="true" label="Auto plate"/>
+                    <p:message for="autoPlate"/>
+
+                    <h:outputLabel for="#{createDriverBean.driver.brand}" value="Brand:"/>
+                    <p:selectOneMenu id="brand" value="#{createDriverBean.driver.brand}" effect="fold" editable="true" required="true">
+                        <f:selectItem itemLabel="Select One" itemValue=""/>
+                        <f:selectItems value="#{createDriverBean.brands}"/>
+                    </p:selectOneMenu>
+                    <p:message for="brand"/>
+
+
+                    <h:outputLabel for="#{createDriverBean.driver.model}" value="Model:"/>
+                    <p:inputText id="model" value="#{createDriverBean.driver.model}" required="true" label="Model"/>
+                    <p:message for="model"/>
+
+                </h:panelGrid>
+                <p:commandButton type="submit" value="Add" action="#{createDriverBean.create}" validateClient="true"/>
+            <!--</p:messages>-->
+        </p:panel>
+    </h:form>
+</h:body>
+</html>
