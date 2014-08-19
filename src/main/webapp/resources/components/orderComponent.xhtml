@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+<head>
+    <title></title>
+</head>
+<body>
+<composite:interface>
+    <composite:attribute name="sourceLable"/>
+    <composite:attribute name="source"/>
+    <composite:attribute name="targetLable"/>
+    <composite:attribute name="target"/>
+    <composite:attribute name="stateLable"/>
+    <composite:attribute name="state"/>
+    <composite:attribute name="addOrder"/>
+    <composite:attribute name="addOrderAction"/>
+
+</composite:interface>
+<composite:implementation>
+    <h:form>
+        <h:panelGrid columns="2" id="homePage">
+        <h:outputLabel id="sourceLable" value="#{cc.attrs.sourceLable}:"/>
+        <p:inputText id="source" value="#{cc.attrs.source}"/>
+        <h:outputLabel id="targetLable" value="#{cc.attrs.targetLable}:"/>
+        <p:inputText id="target" value="#{cc.attrs.target}"/>
+        <h:outputLabel id="stateLable" value="#{cc.attrs.stateLable}:"/>
+        <p:inputText id="state" value="#{cc.attrs.state}"/>
+        </h:panelGrid>
+        <p:commandButton type="submit" value="#{cc.attrs.addOrder}" action="#{cc.attrs.addOrderAction}" validateClient="true"/>
+    </h:form>
+</composite:implementation>
+</body>
+</html>

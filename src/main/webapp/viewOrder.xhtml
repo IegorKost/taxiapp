@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:f="http://java.sun.com/jsf/core"
+       xmlns:p="http://primefaces.org/ui">
+<head>
+    <title>All properties of new driver</title>
+</head>
+<body>
+<p:panel header="Driver added">
+    <h:panelGrid id="newDriver" columns="3" cellpadding="5">
+        <p:outputLabel for="#{createOrderBean.order.orderId}" value="Driver:"/>
+        <p:outputLabel value="#{createOrderBean.order.orderId}"/>
+        <br/>
+        <p:outputLabel for="#{createOrderBean.order.source}" value="Source:"/>
+        <p:outputLabel value="#{createOrderBean.order.source}"/>
+        <br/>
+        <p:outputLabel for="#{createOrderBean.order.target}" value="Target:"/>
+        <p:outputLabel value="#{createOrderBean.order.target}"/>
+        <br/>
+        <p:outputLabel for="#{createOrderBean.order.state}" value="State:"/>
+        <p:outputLabel value="#{createOrderBean.order.state}"/>
+    </h:panelGrid>
+</p:panel>
+</body>
+</html>

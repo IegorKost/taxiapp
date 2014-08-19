@@ -1,13 +1,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:tr="http://java.sun.com/jsf/composite/components">
 <h:head></h:head>
 <h:body>
     <h:form>
-        <p:panel header="Validate">
+        <p:panel header="Driver form">
             <!--<p:messages id="inputForm">-->
-                <h:panelGrid id="grid" columns="3" cellpadding="5">
+                <h:panelGrid id="gridDriver" columns="3" cellpadding="5">
                     <h:outputLabel for="#{createDriverBean.driver.firstName}" value="First name:"/>
                     <p:inputText id="firstName" value="#{createDriverBean.driver.firstName}" required="true" label="First name"/>
                     <p:message for="firstName"/>
@@ -27,14 +28,28 @@
                     </p:selectOneMenu>
                     <p:message for="brand"/>
 
-
                     <h:outputLabel for="#{createDriverBean.driver.model}" value="Model:"/>
                     <p:inputText id="model" value="#{createDriverBean.driver.model}" required="true" label="Model"/>
                     <p:message for="model"/>
 
                 </h:panelGrid>
-                <p:commandButton type="submit" value="Add" action="#{createDriverBean.create}" validateClient="true"/>
+                <p:commandButton type="submit" value="Add Driver" action="#{createDriverBean.create}" validateClient="true"/>
             <!--</p:messages>-->
+        </p:panel>
+    </h:form>
+    <h:form>
+        <p:panel header="Order form">
+            <h:panelGrid id="gridOrder" columns="2" cellpadding="5">
+                <tr:orderComponent
+                        sourceLable="Source"
+                        source="#{createOrderBean.order.source}"
+                        targetLable="Target"
+                        target="#{createOrderBean.order.target}"
+                        stateLable="State"
+                        state="#{createOrderBean.order.state}"
+                        addOrder="Add Order"
+                        addOrderAction="#{createOrderBean.create}"/>
+            </h:panelGrid>
         </p:panel>
     </h:form>
 </h:body>
