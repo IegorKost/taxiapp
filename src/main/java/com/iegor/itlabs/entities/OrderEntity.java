@@ -18,7 +18,7 @@ public class OrderEntity {
     private DriverEntity driver;
 
     @ManyToOne (cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn (name = "DRIVER_ID")
+    @JoinColumn (name = "DRIVER_ID", insertable = false, updatable = false)
     public DriverEntity getDriver() {
         return driver;
     }

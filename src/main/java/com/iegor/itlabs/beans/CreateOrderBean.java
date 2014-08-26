@@ -1,6 +1,5 @@
 package com.iegor.itlabs.beans;
 
-import com.iegor.itlabs.entities.DriverEntity;
 import com.iegor.itlabs.entities.OrderEntity;
 import com.iegor.itlabs.model.Order;
 import com.iegor.itlabs.util.HibernateUtil;
@@ -34,11 +33,10 @@ public class CreateOrderBean {
         try {
             transaction = session.beginTransaction();
             OrderEntity orderEntity = new OrderEntity();
-            DriverEntity driverEntity = new DriverEntity();
             orderEntity.setSource(order.getSource());
             orderEntity.setTarget(order.getTarget());
             orderEntity.setState(order.getState());
-            orderEntity.setDriver(driverEntity);
+            orderEntity.setDriverId(order.getDriverId());
             long orderId = (Long)session.save(orderEntity);
             transaction.commit();
         } catch (HibernateException e) {

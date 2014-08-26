@@ -8,7 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,7 +16,7 @@ import java.util.Map;
  * Created by Iegor on 04.08.2014.
  */
 @ManagedBean(name="createDriverBean")
-@SessionScoped
+@RequestScoped
 public class CreateDriverBean {
 
     private Driver driver = new Driver();

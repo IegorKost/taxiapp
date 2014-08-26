@@ -3,33 +3,35 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui"
       xmlns:tr="http://java.sun.com/jsf/composite/components">
-<h:head></h:head>
+<h:head>
+    <title>Home page</title>
+</h:head>
 <h:body>
     <h:form>
         <p:panel header="Driver form">
             <!--<p:messages id="inputForm">-->
                 <h:panelGrid id="gridDriver" columns="3" cellpadding="5">
-                    <h:outputLabel for="#{createDriverBean.driver.firstName}" value="First name:"/>
-                    <p:inputText id="firstName" value="#{createDriverBean.driver.firstName}" required="true" label="First name"/>
+                    <h:outputLabel for="firstName" value="First name:"/>
+                    <p:inputText id="firstName" value="#{createDriverBean.driver.firstName}" required="true"/>
                     <p:message for="firstName"/>
 
-                    <h:outputLabel for="#{createDriverBean.driver.lastName}" value="Last name:"/>
-                    <p:inputText id="lastName" value="#{createDriverBean.driver.lastName}" required="true" label="Last name"/>
+                    <h:outputLabel for="lastName" value="Last name:"/>
+                    <p:inputText id="lastName" value="#{createDriverBean.driver.lastName}" required="true"/>
                     <p:message for="lastName"/>
 
-                    <h:outputLabel for="#{createDriverBean.driver.autoPlate}" value="Auto plate:"/>
-                    <p:inputText id="autoPlate" value="#{createDriverBean.driver.autoPlate}" required="true" label="Auto plate"/>
+                    <h:outputLabel for="autoPlate" value="Auto plate:"/>
+                    <p:inputText id="autoPlate" value="#{createDriverBean.driver.autoPlate}" required="true"/>
                     <p:message for="autoPlate"/>
 
-                    <h:outputLabel for="#{createDriverBean.driver.brand}" value="Brand:"/>
+                    <h:outputLabel for="brand" value="Brand:"/>
                     <p:selectOneMenu id="brand" value="#{createDriverBean.driver.brand}" effect="fold" editable="true" required="true">
                         <f:selectItem itemLabel="Select One" itemValue=""/>
                         <f:selectItems value="#{createDriverBean.brands}"/>
                     </p:selectOneMenu>
                     <p:message for="brand"/>
 
-                    <h:outputLabel for="#{createDriverBean.driver.model}" value="Model:"/>
-                    <p:inputText id="model" value="#{createDriverBean.driver.model}" required="true" label="Model"/>
+                    <h:outputLabel for="model" value="Model:"/>
+                    <p:inputText id="model" value="#{createDriverBean.driver.model}" required="true"/>
                     <p:message for="model"/>
 
                 </h:panelGrid>
@@ -47,6 +49,8 @@
                         target="#{createOrderBean.order.target}"
                         stateLable="State"
                         state="#{createOrderBean.order.state}"
+                        driverLable="Driver"
+                        driverId="#{createOrderBean.order.driverId}"
                         addOrder="Add Order"
                         addOrderAction="#{createOrderBean.create}"/>
             </h:panelGrid>

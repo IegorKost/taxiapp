@@ -10,8 +10,8 @@
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">root</property>
         <property name="hibernate.show_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
         <mapping class="com.iegor.itlabs.entities.DriverEntity"/>
         <mapping class="com.iegor.itlabs.entities.OrderEntity"/>
-        <!--<property name="hbm2ddl.auto">update</property>-->
     </session-factory>
 </hibernate-configuration>

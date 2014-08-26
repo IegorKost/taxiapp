@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html  xmlns="http://www.w3.org/1999/xhtml"
        xmlns:h="http://java.sun.com/jsf/html"
-       xmlns:f="http://java.sun.com/jsf/core"
        xmlns:p="http://primefaces.org/ui">
-<head>
+<h:head>
     <title>All properties of new driver</title>
-</head>
-<body>
+</h:head>
+<h:body>
 <p:panel header="Driver added">
-    <h:panelGrid id="newDriver" columns="3" cellpadding="5">
-        <p:outputLabel for="#{createDriverBean.driver.firstName}" value="First name:"/>
-        <p:outputLabel value="#{createDriverBean.driver.firstName}"/>
-        <br/>
-        <p:outputLabel for="#{createDriverBean.driver.lastName}" value="Last name:"/>
-        <p:outputLabel value="#{createDriverBean.driver.lastName}"/>
-        <br/>
-        <p:outputLabel for="#{createDriverBean.driver.autoPlate}" value="Auto plate:"/>
-        <p:outputLabel value="#{createDriverBean.driver.autoPlate}"/>
-        <br/>
-        <p:outputLabel for="#{createDriverBean.driver.brand}" value="Brand:"/>
-        <p:outputLabel value="#{createDriverBean.driver.brand}"/>
-        <br/>
-        <p:outputLabel for="#{createDriverBean.driver.model}" value="Model:"/>
-        <p:outputLabel value="#{createDriverBean.driver.model}"/>
+    <h:panelGrid id="newDriver" columns="2" cellpadding="5">
+        <h:outputText value="First name:"/>
+        <h:outputText value="#{createDriverBean.driver.firstName}"/>
+
+        <h:outputText value="Last name:"/>
+        <h:outputText value="#{createDriverBean.driver.lastName}"/>
+
+        <h:outputText value="Auto plate:"/>
+        <h:outputText value="#{createDriverBean.driver.autoPlate}"/>
+
+        <h:outputText value="Brand:"/>
+        <h:outputText value="#{createDriverBean.driver.brand}"/>
+
+        <h:outputText value="Model:"/>
+        <h:outputText value="#{createDriverBean.driver.model}"/>
     </h:panelGrid>
+    <h:form>
+        <p:commandButton action="index" value="Back"/>
+    </h:form>
 </p:panel>
-</body>
+</h:body>
 </html>

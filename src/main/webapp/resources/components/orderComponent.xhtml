@@ -4,11 +4,10 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui"
       xmlns:composite="http://java.sun.com/jsf/composite">
 <head>
-    <title></title>
+    <title>Component for order</title>
 </head>
 <body>
 <composite:interface>
@@ -18,21 +17,24 @@
     <composite:attribute name="target"/>
     <composite:attribute name="stateLable"/>
     <composite:attribute name="state"/>
+    <composite:attribute name="driverLable"/>
+    <composite:attribute name="driverId"/>
     <composite:attribute name="addOrder"/>
-    <composite:attribute name="addOrderAction"/>
-
+    <composite:attribute name="addOrderAction" method-signature="java.lang.String create()"/>
 </composite:interface>
 <composite:implementation>
     <h:form>
         <h:panelGrid columns="2" id="homePage">
-        <h:outputLabel id="sourceLable" value="#{cc.attrs.sourceLable}:"/>
+        <h:outputLabel id="sourceLable" for="source" value="#{cc.attrs.sourceLable}:"/>
         <p:inputText id="source" value="#{cc.attrs.source}"/>
-        <h:outputLabel id="targetLable" value="#{cc.attrs.targetLable}:"/>
+        <h:outputLabel id="targetLable" for="target" value="#{cc.attrs.targetLable}:"/>
         <p:inputText id="target" value="#{cc.attrs.target}"/>
-        <h:outputLabel id="stateLable" value="#{cc.attrs.stateLable}:"/>
+        <h:outputLabel id="stateLable" for="state" value="#{cc.attrs.stateLable}:"/>
         <p:inputText id="state" value="#{cc.attrs.state}"/>
+        <h:outputLabel id="driverLable" for="driverId" value="#{cc.attrs.driverLable}:"/>
+        <p:inputText id="driverId" value="#{cc.attrs.driverId}"/>
         </h:panelGrid>
-        <p:commandButton type="submit" value="#{cc.attrs.addOrder}" action="#{cc.attrs.addOrderAction}" validateClient="true"/>
+        <p:commandButton type="submit" value="#{cc.attrs.addOrder}" action="#{cc.attrs.addOrderAction}" validateClient="false"/>
     </h:form>
 </composite:implementation>
 </body>

@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html  xmlns="http://www.w3.org/1999/xhtml"
        xmlns:h="http://java.sun.com/jsf/html"
-       xmlns:f="http://java.sun.com/jsf/core"
        xmlns:p="http://primefaces.org/ui">
-<head>
-    <title>All properties of new driver</title>
-</head>
-<body>
-<p:panel header="Driver added">
-    <h:panelGrid id="newDriver" columns="3" cellpadding="5">
-        <p:outputLabel for="#{createOrderBean.order.orderId}" value="Driver:"/>
-        <p:outputLabel value="#{createOrderBean.order.orderId}"/>
-        <br/>
-        <p:outputLabel for="#{createOrderBean.order.source}" value="Source:"/>
-        <p:outputLabel value="#{createOrderBean.order.source}"/>
-        <br/>
-        <p:outputLabel for="#{createOrderBean.order.target}" value="Target:"/>
-        <p:outputLabel value="#{createOrderBean.order.target}"/>
-        <br/>
-        <p:outputLabel for="#{createOrderBean.order.state}" value="State:"/>
-        <p:outputLabel value="#{createOrderBean.order.state}"/>
+<h:head>
+    <title>All properties of new order</title>
+</h:head>
+<h:body>
+<p:panel header="Order added">
+    <h:panelGrid id="newDriver" columns="2" cellpadding="5">
+        <h:outputText value="Driver:"/>
+        <h:outputText value="#{createOrderBean.order.driverId}"/>
+
+        <h:outputText value="Source:"/>
+        <h:outputText value="#{createOrderBean.order.source}"/>
+
+        <h:outputText value="Target:"/>
+        <h:outputText value="#{createOrderBean.order.target}"/>
+
+        <h:outputText value="State:"/>
+        <h:outputText value="#{createOrderBean.order.state}"/>
     </h:panelGrid>
+    <h:form>
+        <p:commandButton action="index" value="Back"/>
+    </h:form>
 </p:panel>
-</body>
+</h:body>
 </html>
