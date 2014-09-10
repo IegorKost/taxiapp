@@ -1,13 +1,11 @@
 package com.iegor.itlabs.model;
 
-import javax.faces.bean.ManagedBean;
-
 /**
  * Created by Iegor on 10.08.2014.
  */
 public class Order {
     private long orderId;
-    private long driverId;
+    private Long driverId;
     private String source;
     private String target;
     private String state;
@@ -20,11 +18,11 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public long getDriverId() {
+    public Long getDriverId() {
         return driverId;
     }
 
-    public void setDriverId(long driverId) {
+    public void setDriverId(Long driverId) {
         this.driverId = driverId;
     }
 
