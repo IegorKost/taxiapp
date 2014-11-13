@@ -1,31 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html  xmlns="http://www.w3.org/1999/xhtml"
        xmlns:h="http://java.sun.com/jsf/html"
-       xmlns:p="http://primefaces.org/ui">
+       xmlns:p="http://primefaces.org/ui"
+        xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
     <title>All properties of new driver</title>
 </h:head>
 <h:body>
-<p:panel header="Driver added">
-    <h:panelGrid id="newDriver" columns="2" cellpadding="5">
-        <h:outputText value="First name:"/>
-        <h:outputText value="#{createDriverBean.driver.firstName}"/>
+    <ui:composition template="templates/common.xhtml">
+        <ui:param name="view" value="driver added"/>
+        <ui:define name="content">
+            <p:panel header="Driver added">
+                <h:panelGrid id="newDriver" columns="2" cellpadding="5">
+                    <h:outputText value="First name:"/>
+                    <h:outputText value="#{createDriverBean.driver.firstName}"/>
 
-        <h:outputText value="Last name:"/>
-        <h:outputText value="#{createDriverBean.driver.lastName}"/>
+                    <h:outputText value="Last name:"/>
+                    <h:outputText value="#{createDriverBean.driver.lastName}"/>
 
-        <h:outputText value="Auto plate:"/>
-        <h:outputText value="#{createDriverBean.driver.autoPlate}"/>
+                    <h:outputText value="Auto plate:"/>
+                    <h:outputText value="#{createDriverBean.driver.autoPlate}"/>
 
-        <h:outputText value="Brand:"/>
-        <h:outputText value="#{createDriverBean.driver.brand}"/>
+                    <h:outputText value="Brand:"/>
+                    <h:outputText value="#{createDriverBean.driver.brand}"/>
 
-        <h:outputText value="Model:"/>
-        <h:outputText value="#{createDriverBean.driver.model}"/>
-    </h:panelGrid>
-    <h:form>
-        <p:commandButton action="index" value="Back"/>
-    </h:form>
-</p:panel>
+                    <h:outputText value="Model:"/>
+                    <h:outputText value="#{createDriverBean.driver.model}"/>
+                </h:panelGrid>
+                <h:form>
+                    <p:commandButton action="index" value="Back"/>
+                </h:form>
+            </p:panel>
+        </ui:define>
+    </ui:composition>
 </h:body>
 </html>

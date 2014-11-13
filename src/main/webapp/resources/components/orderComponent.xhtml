@@ -24,17 +24,19 @@
 </composite:interface>
 <composite:implementation>
     <h:form>
-        <h:panelGrid columns="2" id="homePage">
-        <h:outputLabel id="sourceLable" for="source" value="#{cc.attrs.sourceLable}:"/>
-        <p:inputText id="source" value="#{cc.attrs.source}"/>
-        <h:outputLabel id="targetLable" for="target" value="#{cc.attrs.targetLable}:"/>
-        <p:inputText id="target" value="#{cc.attrs.target}"/>
-        <h:outputLabel id="stateLable" for="state" value="#{cc.attrs.stateLable}:"/>
-        <p:inputText id="state" value="#{cc.attrs.state}"/>
-        <h:outputLabel id="driverLable" for="driverId" value="#{cc.attrs.driverLable}:"/>
-        <p:inputText id="driverId" value="#{cc.attrs.driverId}"/>
-        </h:panelGrid>
-        <p:commandButton type="submit" value="#{cc.attrs.addOrder}" action="#{cc.attrs.addOrderAction}" validateClient="false"/>
+        <p:panel header="Order form">
+            <h:panelGrid id="gritOrder" columns="2" cellpadding="5">
+                <h:outputLabel id="sourceLable" for="source" value="#{cc.attrs.sourceLable}:"/>
+                <p:inputText id="source" value="#{cc.attrs.source}"/>
+                <h:outputLabel id="targetLable" for="target" value="#{cc.attrs.targetLable}:"/>
+                <p:inputText id="target" value="#{cc.attrs.target}"/>
+                <h:outputLabel id="stateLable" for="state" value="#{cc.attrs.stateLable}:"/>
+                <p:inputText id="state" value="#{cc.attrs.state}"/>
+                <h:outputLabel id="driverLable" for="driverId" value="#{cc.attrs.driverLable}:"/>
+                <p:inputText id="driverId" value="#{cc.attrs.driverId}"/>
+            </h:panelGrid>
+            <p:commandButton type="submit" value="#{cc.attrs.addOrder}" action="#{cc.attrs.addOrderAction}" validateClient="false"/>
+        </p:panel>
     </h:form>
 </composite:implementation>
 </body>
