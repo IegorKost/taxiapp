@@ -8,6 +8,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "driver", schema = "", catalog = "taxiapp")
+@NamedQuery(name = "DriverEntity.getAll", query = "SELECT d FROM DriverEntity d")
 public class DriverEntity {
     private long driverId;
     private String firstName;

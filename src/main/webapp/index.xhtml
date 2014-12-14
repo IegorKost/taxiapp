@@ -56,6 +56,11 @@
                         addOrder="Add Order"
                         addOrderAction="#{createOrderBean.create}"/>
             </h:form>
+              <h:form>
+                  <p:outputLabel for="drivers" value="Enter driver id: "/>
+                  <p:inputText id="drivers" value="#{selectDriversBean.id}"/>
+                  <p:commandButton type="submit" value="Select driver" action="#{selectDriversBean.getDriverInfo()}"/>
+              </h:form>
         </ui:define>
     </ui:composition>
 </h:body>

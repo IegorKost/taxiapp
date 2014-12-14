@@ -1,5 +1,6 @@
 package com.iegor.itlabs.beans;
 
+
 import com.iegor.itlabs.entities.OrderEntity;
 import com.iegor.itlabs.model.Order;
 import com.iegor.itlabs.util.HibernateUtil;
@@ -9,6 +10,7 @@ import org.hibernate.Transaction;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+
 
 /**
  * Created by Iegor on 10.08.2014.

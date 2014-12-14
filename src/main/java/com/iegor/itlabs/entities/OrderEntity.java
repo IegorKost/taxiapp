@@ -8,6 +8,7 @@ import java.util.LinkedList;
  */
 @Entity
 @Table(name = "order", schema = "", catalog = "taxiapp")
+@NamedQuery(name = "OrderEntity.getAll", query = "SELECT o FROM OrderEntity o")
 public class OrderEntity {
     private long orderId;
     private Long driverId;
